@@ -1,0 +1,8 @@
+@font-face {
+  font-family: poiret-one;
+  src: url(../fonts/poiretone.ttf);
+}
+
+.header{
+    font-family: poiret-one;
+}
