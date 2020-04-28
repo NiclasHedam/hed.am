@@ -3,21 +3,7 @@
   src: url(../fonts/OpenSans-Regular.ttf);
 }
 
-@font-face {
-  font-family: open-sans-bold;
-  src: url(../fonts/OpenSans-Bold.ttf);
-}
-
 body{
   font-family: open-sans;
-  line-height: 1.25em;
-  background-color: #22292f;
-}
-
-.bold{
-  font-family: open-sans-bold;
-}
-
-.indent {
-  text-indent: 1em;
+  background-color: #161616;
 }
