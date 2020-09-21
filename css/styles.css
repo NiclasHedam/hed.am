@@ -7,3 +7,12 @@ body{
   font-family: open-sans;
   background-color: #161616;
 }
+
+/* The colors should be of weight 400 */
+.bg-conf {
+  background-color: #68d391;
+}
+
+.bg-workshop{
+  background-color: #f6e05e;
+}

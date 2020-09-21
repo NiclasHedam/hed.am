@@ -15,7 +15,7 @@
 </head>
 
 <body class="text-white">
-    <div class="container mx-auto text-center pt-8 sm:pt-16 md:pt-32 lg:pt-64">
+    <div class="container mx-auto text-center pt-8 sm:pt-4 md:pt-8 lg:pt-16">
         <h1 class="text-5xl">NICLAS HEDAM</h1>
         <h2 class="text-xl">PhD Fellow, Computer Science | Copenhagen, DK</h2>
 
@@ -51,6 +51,54 @@
                 </a>
             </div>
         </div>
+    </div>
+    <div class="mt-24">
+      <h3 class="text-xl text-center">Publications</h3>
+      <hr class="w-64 mx-auto mt-2" />
+      {% assign mid = site.publications | sort: 'date' %}
+        {% assign publications = mid | reverse %}
+        {% for pub in publications %}
+          <div class="sm:w-1/2 lg:w-1/3 w-full mt-2 mx-auto flex">
+            <div class="mt-1 w-24 h-8 text-sm text-black text-center mr-4 rounded bg-{{ pub.type }}">
+              <span class="mt-1 inline-block">
+                {% if pub.type == "conf" %}
+                  Conference
+                {% elsif pub.type == "workshop" %}
+                  Workshop
+                {% endif %}
+              </span>
+            </div>
+            <div class="flex-1">
+              <span>
+                <b>{{ pub.title | escape }}</b>.
+              </span>
+              {{ pub.authors | escape }}
+              Published {{ pub.date | date: "%b %Y" }} @ {{ pub.journal | escape }}.
+              {% if pub.pdf %}
+                <a href="{{ pub.pdf }}" target="_blank" class="text-red-500">[pdf]</a>
+              {% endif %}
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+    <div class="mt-12">
+      <h3 class="text-xl text-center">Talks</h3>
+      <hr class="w-64 mx-auto mt-2" />
+      {% assign mid = site.talks | sort: 'date' %}
+        {% assign talks = mid | reverse %}
+        {% for talk in talks %}
+          <div class="sm:w-1/2 lg:w-1/3 w-full mt-2 mx-auto flex">
+            <div class="flex-1">
+              <span>
+                <b>{{ talk.title | escape }}</b>.
+              </span>
+              Presented {{ talk.date | date: "%d. %b %Y" }} @ {{ talk.location | escape }}.
+              {% if talk.pdf %}
+                <a href="{{ talk.pdf }}" target="_blank" class="text-red-500">[pdf]</a>
+              {% endif %}
+            </div>
+          </div>
+      {% endfor %}
     </div>
     <script type="application/ld+json">
         {
