@@ -14,7 +14,7 @@
     <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body class="text-white">
+<body class="text-white mb-16">
     <div class="container mx-auto text-center pt-8 sm:pt-4 md:pt-8 lg:pt-16">
         <h1 class="text-5xl">NICLAS HEDAM</h1>
         <h2 class="text-xl">PhD Fellow, Computer Science | Copenhagen, DK</h2>
@@ -52,14 +52,14 @@
             </div>
         </div>
     </div>
-    <div class="mt-24">
+    <div class="mt-16">
       <h3 class="text-xl text-center">Publications</h3>
       <hr class="w-64 mx-auto mt-2" />
       {% assign mid = site.publications | sort: 'date' %}
         {% assign publications = mid | reverse %}
         {% for pub in publications %}
           <div class="sm:w-1/2 lg:w-1/3 w-full mt-2 mx-auto flex">
-            <div class="mt-1 w-24 h-8 text-sm text-black text-center mr-4 rounded bg-{{ pub.type }}">
+            <div class="mt-1 w-32 h-8 text-sm text-center mr-4 rounded bg-{{ pub.type }}">
               <span class="mt-1 inline-block">
                 {% if pub.type == "conf" %}
                   Conference
@@ -75,8 +75,34 @@
               {{ pub.authors | escape }}
               Published {{ pub.date | date: "%b %Y" }} @ {{ pub.journal | escape }}.
               {% if pub.pdf %}
-                <a href="{{ pub.pdf }}" target="_blank" class="text-red-500">[pdf]</a>
+                <a href="{{ pub.pdf }}" target="_blank" class="text-red-600">[pdf]</a>
               {% endif %}
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+    <div class="mt-12">
+      <h3 class="text-xl text-center">Teaching</h3>
+      <hr class="w-64 mx-auto mt-2" />
+      {% assign mid = site.teaching | sort: 'date' %}
+        {% assign teaching = mid | reverse %}
+        {% for teach in teaching %}
+          <div class="sm:w-1/2 lg:w-1/3 w-full mt-2 mx-auto flex">
+            <div class="mt-1 w-32 h-8 text-sm text-center mr-4 rounded bg-{{ teach.role }}">
+              <span class="mt-1 inline-block">
+                {% if teach.role == "ta" %}
+                  Teaching Assistant
+                {% elsif teach.role == "teacher" %}
+                  Teacher
+                {% endif %}
+              </span>
+            </div>
+            <div class="flex-1">
+              <span>
+                <b>{{ teach.title | escape }}</b> at {{ teach.location | escape }}.
+              </span>
+              <br />
+              {{ teach.start | date: "%b %Y" }} to {{ teach.end | date: "%b %Y" }}
             </div>
           </div>
       {% endfor %}
@@ -88,13 +114,22 @@
         {% assign talks = mid | reverse %}
         {% for talk in talks %}
           <div class="sm:w-1/2 lg:w-1/3 w-full mt-2 mx-auto flex">
+            <div class="mt-1 w-32 h-8 text-sm text-center mr-4 rounded bg-{{ talk.type }}">
+              <span class="mt-1 inline-block">
+                {% if talk.type == "conf" %}
+                  Conference
+                {% elsif talk.type == "workshop" %}
+                  Workshop
+                {% endif %}
+              </span>
+            </div>
             <div class="flex-1">
               <span>
                 <b>{{ talk.title | escape }}</b>.
               </span>
               Presented {{ talk.date | date: "%d. %b %Y" }} @ {{ talk.location | escape }}.
               {% if talk.pdf %}
-                <a href="{{ talk.pdf }}" target="_blank" class="text-red-500">[pdf]</a>
+                <a href="{{ talk.pdf }}" target="_blank" class="text-red-600">[pdf]</a>
               {% endif %}
             </div>
           </div>

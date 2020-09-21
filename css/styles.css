@@ -8,11 +8,19 @@ body{
   background-color: #161616;
 }
 
-/* The colors should be of weight 400 */
+/* The colors should be of weight 800 */
 .bg-conf {
-  background-color: #68d391;
+  background-color: #276749;
 }
 
-.bg-workshop{
-  background-color: #f6e05e;
+.bg-workshop {
+  background-color: #2c5282;
+}
+
+.bg-ta {
+  background-color: #553c9a;
+}
+
+.bg-teacher {
+  background-color: #9c4221;
 }
