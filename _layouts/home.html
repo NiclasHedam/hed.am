@@ -17,7 +17,7 @@
 <body class="text-white">
     <div class="container mx-auto mt-32 flex flex-wrap" role="main">
       <div class="flex-1 mb-8 text-center mx-8">
-        <img class="h-48 w-48 rounded-full mx-auto mb-4" alt="Picture of Niclas Hedam" src="niclashedam.png">
+        <img class="h-48 w-48 rounded-full mx-auto mb-4 border-white border-2 border-dotted" alt="Picture of Niclas Hedam" src="niclashedam.png">
         <h1 class="text-5xl">NICLAS HEDAM</h1>
         <h2 class="text-xl">PhD Fellow, Computer Science</h2>
         <h3 class="text-lg">&#127465;&#127472; Copenhagen, DK</h3>
@@ -103,10 +103,17 @@
                 </div>
                 <div class="flex-1">
                   <span>
-                    <b>{{ teach.title | escape }}</b> @ {{ teach.location | escape }}.
+                    <b>
+                    {{ teach.title | escape }}</b>
+                    @ {{ teach.location | escape }}.
                   </span>
                   <br />
-                  {{ teach.start | date: "%b %Y" }} to {{ teach.end | date: "%b %Y" }}
+                  {{ teach.start | date: "%b %Y" }} to {{ teach.end | date: "%b %Y" }}.
+                  {% if teach.link %}
+                    <a href="{{ teach.link }}" class="text-red-500" title="{{ talk.title | escape }} website" target="_blank">
+                      [website]
+                    </a>
+                  {% endif %}
                 </div>
               </div>
           {% endfor %}
@@ -175,7 +182,8 @@
             "https://scholar.google.com/citations?user=DdLrWgwAAAAJ",
             "https://dasya.itu.dk/people/niclashedam/",
             "https://twitter.com/niclashedam",
-            "https://pure.itu.dk/portal/da/persons/niclas-hedam(c07af2ac-7d8d-482a-ba4c-cd9559612df6).html"
+            "https://pure.itu.dk/portal/da/persons/niclas-hedam(c07af2ac-7d8d-482a-ba4c-cd9559612df6).html",
+            "https://itu.dk/people/nhed/"
           ]
         }
     </script>
