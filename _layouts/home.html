@@ -15,9 +15,9 @@
 </head>
 
 <body class="text-white">
-    <div class="container mx-auto mt-32 flex flex-wrap">
+    <div class="container mx-auto mt-32 flex flex-wrap" role="main">
       <div class="flex-1 mb-8 text-center mx-4">
-        <img class="h-48 w-48 rounded-full mx-auto mb-4" src="niclashedam.png">
+        <img class="h-48 w-48 rounded-full mx-auto mb-4" alt="Picture of Niclas Hedam" src="niclashedam.png">
         <h1 class="text-5xl">NICLAS HEDAM</h1>
         <h2 class="text-xl">PhD Fellow, Computer Science</h2>
         <h3 class="text-lg">&#127465;&#127472; Copenhagen, DK</h3>
@@ -79,7 +79,7 @@
                   {{ pub.authors | escape }}
                   Published {{ pub.date | date: "%b %Y" }} @ {{ pub.journal | escape }}.
                   {% if pub.pdf %}
-                    <a href="{{ pub.pdf }}" target="_blank" class="text-red-600">[pdf]</a>
+                    <a href="{{ pub.pdf }}" title="{{ pub.date | date: "%Y" }} {{ pub.journal | escape }} publication" target="_blank" class="text-red-500">[pdf]</a>
                   {% endif %}
                 </div>
               </div>
@@ -133,7 +133,7 @@
                   </span>
                   Presented {{ talk.date | date: "%d. %b %Y" }} @ {{ talk.location | escape }}.
                   {% if talk.pdf %}
-                    <a href="{{ talk.pdf }}" target="_blank" class="text-red-600">[pdf]</a>
+                    <a href="{{ talk.pdf }}" title="{{ talk.location | escape }} {{ talk.date | date: "%Y" }} presentation" target="_blank" class="text-red-500">[pdf]</a>
                   {% endif %}
                 </div>
               </div>
