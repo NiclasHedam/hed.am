@@ -8,6 +8,12 @@ body{
   background-color: #161616;
 }
 
+.e-mail:before {
+  content: attr(data-website) "\0040" attr(data-user);
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
 /* The colors should be of weight 800 */
 .bg-conf {
   background-color: #276749;
