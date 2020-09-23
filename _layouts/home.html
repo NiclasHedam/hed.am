@@ -110,7 +110,7 @@
                   <br />
                   {{ teach.start | date: "%b %Y" }} to {{ teach.end | date: "%b %Y" }}.
                   {% if teach.link %}
-                    <a href="{{ teach.link }}" class="text-red-500" title="{{ talk.title | escape }} website" target="_blank">
+                    <a href="{{ teach.link }}" class="text-red-500" title="{{ teach.title | escape }} website" target="_blank">
                       [website]
                     </a>
                   {% endif %}
