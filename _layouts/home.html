@@ -16,7 +16,7 @@
 
 <body class="text-white">
     <div class="container mx-auto mt-32 flex flex-wrap" role="main">
-      <div class="flex-1 mb-8 text-center mx-8">
+      <div class="flex-1 mb-8 text-center mx-4">
         <img class="h-56 w-56 rounded-full mx-auto mb-4 border-white border border-dashed object-cover" alt="Picture of Niclas Hedam" src="niclashedam.jpg">
         <h1 class="text-5xl">NICLAS HEDAM</h1>
         <h2 class="text-xl">PhD Fellow, Computer Science</h2>
@@ -56,7 +56,7 @@
             </div>
         </div>
       </div>
-      <div class="flex-1 mx-8 mb-8">
+      <div class="flex-1 mx-4 mb-8">
         <div>
           <h3 class="text-xl text-center">Publications</h3>
           <hr class="w-64 mx-auto mt-2" />
@@ -64,7 +64,7 @@
             {% assign publications = mid | reverse %}
             {% for pub in publications %}
               <div class="w-full mt-2 mx-auto flex">
-                <div class="mt-1 w-32 h-8 text-sm text-center mr-4 rounded bg-{{ pub.type }}">
+                <div class="mt-1 w-40 h-8 text-sm text-center mr-4 rounded bg-{{ pub.type }}">
                   <span class="mt-1 inline-block">
                     {% if pub.type == "conf" %}
                       Conference
@@ -93,7 +93,7 @@
             {% assign teaching = mid | reverse %}
             {% for teach in teaching %}
               <div class="w-full mt-2 mx-auto flex">
-                <div class="mt-1 w-32 h-8 text-sm text-center mr-4 rounded bg-{{ teach.role }}">
+                <div class="mt-1 w-40 h-8 text-sm text-center mr-4 rounded bg-{{ teach.role }}">
                   <span class="mt-1 inline-block">
                     {% if teach.role == "ta" %}
                       Teaching Assistant
@@ -126,7 +126,7 @@
             {% assign talks = mid | reverse %}
             {% for talk in talks %}
               <div class="w-full mt-2 mx-auto flex">
-                <div class="mt-1 w-32 h-8 text-sm text-center mr-4 rounded bg-{{ talk.type }}">
+                <div class="mt-1 w-40 h-8 text-sm text-center mr-4 rounded bg-{{ talk.type }}">
                   <span class="mt-1 inline-block">
                     {% if talk.type == "conf" %}
                       Conference
