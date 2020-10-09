@@ -141,7 +141,7 @@
                   </span>
                   {{ talk.date | date: "%d. %b %Y" }} @ {{ talk.location | escape }}.
                   {% if talk.pdf %}
-                    <a href="{{ talk.pdf }}" title="{{ talk.location | escape }} {{ talk.date | date: "%Y" }} presentation" target="_blank" class="text-red-500">[pdf]</a>
+                    <a href="{{ talk.pdf }}" title="{{ talk.location | escape }} {{ talk.date | date: "%b %Y" }} talk" target="_blank" class="text-red-500">[pdf]</a>
                   {% endif %}
                 </div>
               </div>
