@@ -1,4 +1,8 @@
+#!/usr/bin/env bash
 
+ENTRIES=""
+
+echo '
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -9,20 +13,14 @@
     <loc>https://hed.am/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://hed.am/./papers/2020-ADMS.pdf</loc>
+  </url>' > ./sitemap.xml
+
+for f in  ./papers/* ./talks/*; do
+    echo "  <url>
+    <loc>https://hed.am/$f</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hed.am/./papers/2020-CIDR.pdf</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hed.am/./talks/2020-ADMS.pdf</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-</urlset>
+  </url>" >> ./sitemap.xml
+done
+
+echo "</urlset>" >> ./sitemap.xml
