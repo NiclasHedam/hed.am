@@ -14,7 +14,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>' > ./sitemap.xml
 
-for f in  ./papers/* ./talks/*; do
+for f in  papers/* talks/*; do
     echo "  <url>
     <loc>https://hed.am/$f</loc>
     <changefreq>monthly</changefreq>
