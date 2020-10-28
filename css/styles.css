@@ -30,3 +30,7 @@ body{
 .bg-teacher {
   background-color: #9c4221;
 }
+
+.bg-other, .bg-draft {
+  background-color: #2d3748;
+}

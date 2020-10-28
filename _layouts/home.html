@@ -70,6 +70,10 @@
                       Conference
                     {% elsif pub.type == "workshop" %}
                       Workshop
+                    {% elsif pub.type == "draft" %}
+                      Draft
+                    {% elsif pub.type == "other" %}
+                      Other
                     {% endif %}
                   </span>
                 </div>
@@ -78,7 +82,9 @@
                     <b>{{ pub.title | escape }}</b>.
                   </span>
                   {{ pub.authors | escape }}
-                  Published {{ pub.date | date: "%b %Y" }} @ {{ pub.journal | escape }}.
+                  {% if pub.journal %}
+                    Published {{ pub.date | date: "%b %Y" }} @ {{ pub.journal | escape }}
+                  {% endif %}
                   {% if pub.pdf %}
                     <a href="{{ pub.pdf }}" title="{{ pub.date | date: "%Y" }} {{ pub.journal | escape }} publication" target="_blank" class="text-red-500">[pdf]</a>
                   {% endif %}
@@ -109,7 +115,7 @@
                     @ {{ teach.location | escape }}.
                   </span>
                   <br />
-                  {{ teach.start | date: "%b %Y" }} to {{ teach.end | date: "%b %Y" }}.
+                  {{ teach.start | date: "%b %Y" }} to {{ teach.end | date: "%b %Y" }}
                   {% if teach.link %}
                     <a href="{{ teach.link }}" class="text-red-500" title="{{ teach.title | escape }} website" target="_blank">
                       [website]
@@ -132,6 +138,8 @@
                       Conference
                     {% elsif talk.type == "workshop" %}
                       Workshop
+                    {% elsif talk.type == "other" %}
+                      Other
                     {% endif %}
                   </span>
                 </div>
@@ -139,7 +147,7 @@
                   <span>
                     <b>{{ talk.title | escape }}</b>.
                   </span>
-                  {{ talk.date | date: "%d. %b %Y" }} @ {{ talk.location | escape }}.
+                  {{ talk.date | date: "%d. %b %Y" }} @ {{ talk.location | escape }}
                   {% if talk.pdf %}
                     <a href="{{ talk.pdf }}" title="{{ talk.location | escape }} {{ talk.date | date: "%b %Y" }} talk" target="_blank" class="text-red-500">[pdf]</a>
                   {% endif %}
