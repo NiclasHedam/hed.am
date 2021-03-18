@@ -129,6 +129,34 @@
           {% endfor %}
         </div>
         <div class="mt-12">
+          <h3 class="text-xl text-center">Service</h3>
+          <hr class="w-64 mx-auto mt-2" />
+          {% assign mid = site.service | sort: 'date' %}
+            {% assign svc = mid | reverse %}
+            {% for service in svc %}
+              <div class="w-full mt-2 mx-auto flex">
+                <div class="mt-1 w-40 h-8 text-sm text-center mr-4 rounded bg-{{ service.type }}">
+                  <span class="mt-1 inline-block">
+                    {% if service.type == "pc" %}
+                      Program Committee
+                    {% elsif service.type == "other" %}
+                      Other
+                    {% endif %}
+                  </span>
+                </div>
+                <div class="flex-1">
+                  <span>
+                    <b>{{ service.location | escape }}</b>
+                  </span>
+                  {{ service.date | date: "%Y" }}<br />
+                  <a href="{{ service.link }}" class="text-red-500 mr-1" title="{{ service.location | escape }} website" target="_blank">
+                    [website]
+                  </a>
+                </div>
+              </div>
+          {% endfor %}
+        </div>
+        <div class="mt-12">
           <h3 class="text-xl text-center">Talks</h3>
           <hr class="w-64 mx-auto mt-2" />
           {% assign mid = site.talks | sort: 'date' %}
