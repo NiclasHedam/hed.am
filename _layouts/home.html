@@ -141,6 +141,8 @@
                   <span class="mt-1 inline-block">
                     {% if service.type == "pc" %}
                       Program Committee
+                    {% elsif service.type == "volunteer" %}
+                      Volunteer
                     {% elsif service.type == "other" %}
                       Other
                     {% endif %}
